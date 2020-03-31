@@ -13,19 +13,19 @@ int * elementShifter(const int array[], const int size);
 void printData();
 
 
-int main(int argc, const char * argv[]) {
-    
+int main() {
+
     cout << "Here are the contents of the file" << endl;
     printData();
-    
+
     int n;
     cout << "How many numbers would you like to read from file? ";
     cin >> n;
-    
+
     if (n>15 || n<=0)
         return 0;
-    
-    
+
+
     int array[n];
     //reads n integers from file data.txt into the array
     ifstream myfile("data.txt");
@@ -34,19 +34,19 @@ int main(int argc, const char * argv[]) {
     // and read integer from file,
     while (count < n && myfile >> x)
         array[count++] = x;
-    
+
     myfile.close();
-    
-    
+
+
     //passes the array to element shifter function
     int *newArray = elementShifter(array, n);
-    
+
     //print newArray
     cout << "Here is the new array with elements shifted one position toward the end of the array: " << endl;
     for (int i = 0; i < n+1; i++) {
         cout << *(newArray+i) << endl;
     }
-    
+
     return 0;
 }
 
@@ -65,7 +65,7 @@ void printData(){
     string line;
     ifstream myfile;
     myfile.open("data.txt");
-    
+
     if (myfile.is_open()){
       while (getline (myfile,line)){
         cout << line << '\n';
