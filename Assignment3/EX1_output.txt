@@ -1,0 +1,30 @@
+Here are the contents of the file
+6
+13
+22
+9
+5
+42
+52
+25
+74
+2
+89
+15
+65
+6
+35
+How many numbers would you like to read from file? 10
+Here is the new array with elements shifted one position toward the end of the array:
+0
+6
+13
+22
+9
+5
+42
+52
+25
+74
+2
+Program ended with exit code: 0
