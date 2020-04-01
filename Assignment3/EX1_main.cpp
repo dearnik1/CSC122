@@ -24,7 +24,6 @@ int main() {
 
     if (n>15 || n<0)
         return 0;
-	const int size = n;
 
     int *array= new int[n];					// Dynamic initialization because we do not know the size initially, we get it from input
     //reads n integers from file data.txt into the array
