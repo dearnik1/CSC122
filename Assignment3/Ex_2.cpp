@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <string>
+
 using namespace std;
 
 string reverse(char[]);
@@ -10,7 +12,7 @@ int main()
 	string str;
 	int size;
 	cout << "Enter a string: ";
-	cin >> str;
+	getline(cin, str);				// Allows using specific characters like spaces
 	while (str.length() > 100)
 	{
 		cout << "100 chars max. Try again: ";
@@ -22,8 +24,9 @@ int main()
 	{
 		cStr[i] = str[i];
 	}
-	cout << "Reversed String: " << reverse(cStr);
-	
+	cout << "Reversed String: " << reverse(cStr) << endl;
+
+	system("pause");
 	return 0;
 }
 
@@ -31,17 +34,16 @@ int main()
 string reverse(char cString[])
 {
 	int size = strlen(cString);
-	int b = size / 2;
 	char temp;
 	char *pFront = cString;
-	char *pRear = pFront + (size-1);;
-	for (int i = 0; i < b; i++)
+	char *pRear = pFront + (size - 1);;
+	while (pFront < pRear)
 	{
-		 temp = *pFront;
-		 *pFront = *pRear;
-		 *pRear = temp;
-		 pFront = pFront + 1;
-		 pRear = pRear - 1;
+		temp = *pFront;
+		*pFront = *pRear;
+		*pRear = temp;
+		pFront++;
+		pRear--;
 	}
 	string newStr = cString;
 	return newStr;

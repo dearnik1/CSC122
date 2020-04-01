@@ -22,11 +22,11 @@ int main() {
     cout << "How many numbers would you like to read from file? ";
     cin >> n;
 
-    if (n>15 || n<=0)
+    if (n>15 || n<0)
         return 0;
+	const int size = n;
 
-
-    int array[n];
+    int *array= new int[n];					// Dynamic initialization because we do not know the size initially, we get it from input
     //reads n integers from file data.txt into the array
     ifstream myfile("data.txt");
     int count = 0;
@@ -47,6 +47,7 @@ int main() {
         cout << *(newArray+i) << endl;
     }
 
+	system("pause");
     return 0;
 }
 
@@ -65,7 +66,6 @@ void printData(){
     string line;
     ifstream myfile;
     myfile.open("data.txt");
-
     if (myfile.is_open()){
       while (getline (myfile,line)){
         cout << line << '\n';
