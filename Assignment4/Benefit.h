@@ -29,4 +29,4 @@ public:
 
 };
 
-#endif
+#endif Benefit_h#pragma once

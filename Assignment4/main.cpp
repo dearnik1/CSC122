@@ -1,6 +1,6 @@
 #include "Employee.h"
 
-int main(int argc, char const *argv[]) {
+int main() {
 
 
     Employee emp1; // using default constructor
@@ -46,5 +46,6 @@ int main(int argc, char const *argv[]) {
     // show the info modified by setter
     emp2.displayEmployee();
 
+	system("pause");
     return 0;
 }
