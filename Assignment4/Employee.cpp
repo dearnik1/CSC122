@@ -49,6 +49,6 @@ void Employee::displayEmployee(){
     cout << "Gender: " << getGender() << endl;
     cout << "Dependents: " << getDependents() << endl;
     cout << "Annual Salary: " << getAnnualSalary() << endl;
-    cout << "Weekly Pay: " << getCalculatePay() << endl;
+    cout << "Weekly Pay: " << calculatePay() << endl;
     benefit.displayBenefit();
 }
