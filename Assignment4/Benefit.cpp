@@ -5,12 +5,11 @@ Benefit::Benefit(){
     healthinsurance = "";
     lifeinsurance = 0;
     vacation = 0;
-
 }
 Benefit::Benefit(string _healthinsurance, double _lifeinsurance, int _vacation){
-    healthinsurance = _healthinsurance;
-    lifeinsurance = _lifeinsurance;
-    vacation = _vacation;
+    setHealthinsurance(_healthinsurance);
+    setLifeinsurance(_lifeinsurance);
+    setVacation(_vacation);
 }
 
 //setter
@@ -23,9 +22,19 @@ void Benefit::setLifeinsurance(double linsurance){
 void Benefit::setVacation(int vac){
     vacation = vac;
 }
+//getter
+string getHealthinsurance() const {
+    return healthinsurance;
+}
+double getLifeinsurance() const {
+    return lifeinsurance;
+}
+int getVacation() const {
+    return vacation;
+}
 
 void Benefit::displayBenefit(){
-    cout << "healthinsurance: " << healthinsurance << endl;
-    cout << "lifeinsurance: " << lifeinsurance << endl;
-    cout << "vacation: " << vacation << endl;
+    cout << "healthinsurance: " << getHealthinsurance() << endl;
+    cout << "lifeinsurance: " << getLifeinsurance() << endl;
+    cout << "vacation: " << getVacation() << endl;
 }
