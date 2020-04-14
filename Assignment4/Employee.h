@@ -22,10 +22,10 @@ public:
     //getter
     string getFirstName() const {return firstName;}
     string getLastName() const {return lastName;}
-    char getGender() const {return gender;};
-    int getDependents() const {return dependents;};
-    double getAnnualSalary() const {return annualSalary};
-    Benefit getBenefit() const {return benefit};
+    char getGender() const {return gender;}
+    int getDependents() const {return dependents;}
+    double getAnnualSalary() const {return annualSalary;}
+    Benefit getBenefit() const {return benefit;}
 
     //setter
     void setFirstName(string fName);
