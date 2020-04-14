@@ -20,12 +20,12 @@ public:
     void displayEmployee();
 
     //getter
-    string getFirstName() const {return firstName;}
-    string getLastName() const {return lastName;}
-    char getGender() const {return gender;}
-    int getDependents() const {return dependents;}
-    double getAnnualSalary() const {return annualSalary;}
-    Benefit getBenefit() const {return benefit;}
+    string getFirstName() const;
+    string getLastName() const;
+    char getGender() const;
+    int getDependents() const;
+    double getAnnualSalary() const;
+    Benefit getBenefit() const;
 
     //setter
     void setFirstName(string fName);
