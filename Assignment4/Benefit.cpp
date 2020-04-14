@@ -22,16 +22,6 @@ void Benefit::setLifeinsurance(double linsurance){
 void Benefit::setVacation(int vac){
     vacation = vac;
 }
-//getter
-string getHealthinsurance() const {
-    return healthinsurance;
-}
-double getLifeinsurance() const {
-    return lifeinsurance;
-}
-int getVacation() const {
-    return vacation;
-}
 
 void Benefit::displayBenefit(){
     cout << "healthinsurance: " << getHealthinsurance() << endl;
