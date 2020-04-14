@@ -12,14 +12,12 @@ Employee::Employee(){
 }
 Employee::Employee(string fName, string lName, char gen, int dep,
     double aSalary, Benefit ben){
-
-    firstName = fName;
-    lastName = lName;
-    gender = gen;
-    dependents = dep;
-    annualSalary = aSalary;
-    benefit = ben;
-
+    setFirstName(fName);
+    setLastName(lName);
+    setGender(gen);
+    setDependents(dep);
+    setAnnualSalary(aSalary);
+    setBenefit(ben);
 }
 
 void Employee::setFirstName(string fName){
@@ -40,16 +38,36 @@ void Employee::setAnnualSalary(double aSalary){
 void Employee::setBenefit(Benefit ben){
     benefit = ben;
 }
+
+string getFirstName() const { 
+    return firstName; 
+}
+string getLastName() const { 
+    return lastName; 
+}
+char getGender() const { 
+    return gender; 
+}
+int getDependents() const { 
+    return dependents; 
+}
+double getAnnualSalary() const { 
+    return annualSalary; 
+}
+Benefit getBenefit() const { 
+    return benefit; 
+}    
+    
 double Employee::calculatePay(){
     return annualSalary/52;
 }
 void Employee::displayEmployee(){
     cout << "==============Employee Info==============" << endl;
-    cout << "First Name: " << firstName << endl;
-    cout << "Last Name: " << lastName << endl;
-    cout << "Gender: " << gender << endl;
-    cout << "Dependents: " << dependents << endl;
-    cout << "Annual Salary: " << annualSalary << endl;
-    cout << "Weekly Pay: " << calculatePay() << endl;
+    cout << "First Name: " << getFirstName() << endl;
+    cout << "Last Name: " << getLastName() << endl;
+    cout << "Gender: " << getGender() << endl;
+    cout << "Dependents: " << getDependents() << endl;
+    cout << "Annual Salary: " << getAnnualSalary() << endl;
+    cout << "Weekly Pay: " << getCalculatePay() << endl;
     benefit.displayBenefit();
 }
