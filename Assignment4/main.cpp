@@ -19,26 +19,13 @@ int main(int argc, char const *argv[]) {
     emp1.displayEmployee();
 
 
-
-
     // using overload constructor
-    Benefit ben2;
-    ben2.setHealthinsurance("unknow2 healthinsurance");
-    ben2.setLifeinsurance(30000);
-    ben2.setVacation(30);
-    Employee emp2("nobody2", "unknow2",'F', 0,50000,ben2);
+    Benefit ben2("unknow2 healthinsurance", 30000, 30);
+    Employee emp2("nobody2", "unknow2",'F', 0, 50000, ben2);
 
     emp2.displayEmployee();
 
-    emp2.setFirstName("nobody1");
-    emp2.setLastName("unknow1");
-    emp2.setGender('M');
-    emp2.setDependents(1);
-    emp2.setAnnualSalary(300000);
-    Benefit ben3;
-    ben3.setHealthinsurance("unknow3 healthinsurance");
-    ben3.setLifeinsurance(20000);
-    ben3.setVacation(20);
+    Benefit ben3("unknow3 healthinsurance", 20000, 20);
     emp2.setBenefit(ben3);
 
     // show the info modified by setter
