@@ -38,25 +38,6 @@ void Employee::setAnnualSalary(double aSalary){
 void Employee::setBenefit(Benefit ben){
     benefit = ben;
 }
-
-string getFirstName() const { 
-    return firstName; 
-}
-string getLastName() const { 
-    return lastName; 
-}
-char getGender() const { 
-    return gender; 
-}
-int getDependents() const { 
-    return dependents; 
-}
-double getAnnualSalary() const { 
-    return annualSalary; 
-}
-Benefit getBenefit() const { 
-    return benefit; 
-}    
     
 double Employee::calculatePay(){
     return annualSalary/52;
