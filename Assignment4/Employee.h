@@ -3,6 +3,7 @@
 #include <string>
 #include "Benefit.h"
 
+
 using namespace std;
 
 class Employee{
@@ -36,4 +37,4 @@ public:
     void setBenefit(Benefit ben);
 };
 
-#endif
+#endif Employee_h#pragma once
