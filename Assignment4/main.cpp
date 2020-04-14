@@ -14,7 +14,6 @@ int main(int argc, char const *argv[]) {
     ben1.setLifeinsurance(10000);
     ben1.setVacation(10);
     emp1.setBenefit(ben1);
-    emp1.setNumEmployees(1);
 
     //invoke the object's displayEmployee() method
     emp1.displayEmployee();
@@ -41,7 +40,6 @@ int main(int argc, char const *argv[]) {
     ben3.setLifeinsurance(20000);
     ben3.setVacation(20);
     emp2.setBenefit(ben3);
-    emp2.setNumEmployees(1);
 
     // show the info modified by setter
     emp2.displayEmployee();

@@ -7,8 +7,6 @@ using namespace std;
 
 class Employee{
 private:
-    static int numEmployees;
-protected:
     string firstName, lastName;
     char gender;
     int dependents;
@@ -22,7 +20,6 @@ public:
     void displayEmployee();
 
     //getter
-    static int getNumEmployees() {return numEmployees;};
     string getFirstName() const {return firstName;}
     string getLastName() const {return lastName;}
     char getGender() const {return gender;}
@@ -31,7 +28,6 @@ public:
     Benefit getBenefit() const {return benefit;}
 
     //setter
-    static void setNumEmployees(int numE);
     void setFirstName(string fName);
     void setLastName(string lName);
     void setGender(char gen);

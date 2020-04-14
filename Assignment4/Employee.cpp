@@ -3,8 +3,6 @@
 #include "Employee.h"
 
 
-int Employee::numEmployees;
-
 Employee::Employee(){
     firstName = "not given";
     lastName = "not given";
@@ -22,10 +20,6 @@ Employee::Employee(string fName, string lName, char gen, int dep,
     annualSalary = aSalary;
     benefit = ben;
 
-}
-
-void Employee::setNumEmployees(int numE){
-    numEmployees = numE;
 }
 
 void Employee::setFirstName(string fName){
