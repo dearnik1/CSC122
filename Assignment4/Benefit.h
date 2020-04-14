@@ -18,9 +18,9 @@ public:
     void displayBenefit();
 
     //getter
-    string getHealthinsurance() const;
-    double getLifeinsurance() const;
-    int getVacation() const;
+    string getHealthinsurance() const { return healthinsurance; }
+    double getLifeinsurance() const { return lifeinsurance; }
+    int getVacation() const { return vacation; }
 
     //setter
     void setHealthinsurance(string hinsurance);
