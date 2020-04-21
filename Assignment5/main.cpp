@@ -9,29 +9,32 @@ int main() {
     int h,m,s;
 
     Time t1;
-    cout << "Enter a time(h m s): ";
+    cout << "Enter time 1 (hours minutes seconds): ";
     cin >> h >> m >> s;
     t1.setTime(h, m, s);
-    cout << "t1 is " << t1.getHours() << ":" << t1.getMinutes()
-        << ":" << t1.getSeconds() << endl;
+    cout << "The given time is ";
+	t1.printTime();
 
-    //object 2
-    cout << "Enter a time(h m s): ";
+    cout << "Enter time 2 (hours minutes seconds): ";
     cin >> h >> m >> s;
     Time t2(h,m,s);
-    cout << "t2 is " << t2.getHours() << ":" << t2.getMinutes()
+
+	// testing accessors. The output format here might be distorted
+    cout << "The given time is " << t2.getHours() << ":" << t2.getMinutes() 
         << ":" << t2.getSeconds() << endl;
 
     if (t1 == t2)
-    	cout << "Time t1 is equal to t2" << endl;
+    	cout << "Time 1 is equal to time 2" << endl;
     else if (t1 > t2)
-		cout << "Time t1 is greater than time t2" << endl;
+		cout << "Time 1 is greater than time 2" << endl;
     else
-        cout << "Time t2 is greater than time t1" << endl;
+        cout << "Time 1 is less than time 2" << endl;
 
 
     Time t3 = t1+t2;
-    cout << "t3(t1+t2): " << t3.getHours() << ":" << t3.getMinutes()
-         << ":" << t3.getSeconds() << endl;
+    cout << "Their sum: ";
+	t3.printTime();
+
+	system("pause");
     return 0;
 }
