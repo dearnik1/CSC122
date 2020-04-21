@@ -2,7 +2,7 @@
 #ifndef Time_H
 #define Time_H
 
-struct timestructure{
+struct timeStructure{
     int hours;
     int minutes;
     int seconds;
@@ -10,14 +10,15 @@ struct timestructure{
 
 class Time {
 private:
-    int hours,minutes,seconds;
+    int hours, minutes, seconds;
 
 public:
     Time();
     Time(int,int,int);
 
+	void printTime();
     void setTime(int,int,int);
-    timestructure getTime()const;
+    timeStructure getTime()const;
 
     //getter
     int getHours() const;

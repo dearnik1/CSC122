@@ -1,13 +1,12 @@
 #include "Time.h"
-
+#include <iostream>
+using namespace std;
 
 Time::Time(){
     hours = minutes = seconds = 0;
 }
 Time::Time(int h,int m,int s){
-    hours = h;
-    minutes = m;
-    seconds = s;
+	setTime(h, m, s);
 }
 
 int Time::getHours() const{
@@ -20,14 +19,25 @@ int Time::getSeconds() const{
     return seconds;
 }
 
+void Time::printTime() {	// output nice & neat HH:MM:SS format
+	if (hours < 10) 
+		cout << 0;
+	cout << hours << ":";
+	if (minutes < 10)
+		cout << 0;
+	cout << minutes << ":";
+	if (seconds < 10)
+		cout << 0;
+	cout << seconds << endl;
+}
 
 void Time::setTime(int h,int m,int s){
-    hours = h;
-    minutes = m;
-    seconds = s;
+    hours = (h + m/60 + s/3600) % 24;	// Hours would never be > 23 in HH:MM:SS format
+    minutes = (m + s/60) % 60;			// Take into account that 10h > 25h because 25h would turn into 1h
+    seconds = s % 60;
 }
-timestructure Time::getTime()const{
-    timestructure t = {hours,minutes,seconds};
+timeStructure Time::getTime()const{
+    timeStructure t = {hours, minutes, seconds};
     return t;
 }
 
@@ -36,27 +46,12 @@ Time Time::operator+(const Time& t) const{
     int temp_hours = hours + t.hours;
     int temp_min = minutes + t.minutes;
     int temp_sec = seconds + t.seconds;
-
-    if (temp_sec >= 60){
-        temp_sec -= 60;
-        temp_min++;
-    }
-
-    if (temp_min >= 60 ) {
-        temp_min -= 60;
-        temp_hours++;
-    }
-
-    if (temp_hours >= 24) {
-        temp_hours -= 24;
-    }
-
     return Time(temp_hours, temp_min, temp_sec);
 }
 bool Time::operator==(const Time& t) const{
     return((hours == t.hours) && (minutes == t.minutes) && (seconds == t.seconds));
 }
 bool Time::operator>(const Time& t) const{
-    return((hours > t.hours) || ((hours==t.hours)&&(minutes>t.minutes))
-        || ((hours==t.hours)&&(minutes==t.minutes)&&(seconds>t.seconds)));
+    return(hours * 3600 + minutes * 60 + seconds > t.hours * 3600 + t.minutes * 60 + t.seconds);	
+	// converting into seconds is easier than building a whole logic comparing hours, minutes and seconds
 }
