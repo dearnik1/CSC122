@@ -1,48 +1,34 @@
 #include "Time.h"
 
-
-Time::Time(){
-    hours = minutes = seconds = 0;
+Time::Time() {
+    t.hours = t.minutes = t.seconds = 0;
 }
-Time::Time(int h,int m,int s){
-    hours = h;
-    minutes = m;
-    seconds = s;
+Time::Time(int h, int m, int s) {
+    setTime(h, m, s);
 }
 
-int Time::getHours() const{
-    return hours;
+void Time::setTime(int h, int m, int s) {
+    t.hours = h;
+    t.minutes = m;
+    t.seconds = s;
 }
-int Time::getMinutes() const{
-    return minutes;
-}
-int Time::getSeconds() const{
-    return seconds;
-}
-
-
-void Time::setTime(int h,int m,int s){
-    hours = h;
-    minutes = m;
-    seconds = s;
-}
-timestructure Time::getTime()const{
-    timestructure t = {hours,minutes,seconds};
-    return t;
+void Time::getTime(Time time)const {
+    cout << time.t.hours << ":" << time.t.minutes
+        << ":" << time.t.seconds << endl;
 }
 
 //overloading operators
-Time Time::operator+(const Time& t) const{
-    int temp_hours = hours + t.hours;
-    int temp_min = minutes + t.minutes;
-    int temp_sec = seconds + t.seconds;
+Time Time::operator+(const Time& time) const {
+    int temp_hours = t.hours + time.t.hours;
+    int temp_min = t.minutes + time.t.minutes;
+    int temp_sec = t.seconds + time.t.seconds;
 
-    if (temp_sec >= 60){
+    if (temp_sec >= 60) {
         temp_sec -= 60;
         temp_min++;
     }
 
-    if (temp_min >= 60 ) {
+    if (temp_min >= 60) {
         temp_min -= 60;
         temp_hours++;
     }
@@ -53,10 +39,10 @@ Time Time::operator+(const Time& t) const{
 
     return Time(temp_hours, temp_min, temp_sec);
 }
-bool Time::operator==(const Time& t) const{
-    return((hours == t.hours) && (minutes == t.minutes) && (seconds == t.seconds));
+bool Time::operator==(const Time& time) const {
+    return((t.hours == time.t.hours) && (t.minutes == time.t.minutes) && (t.seconds == time.t.seconds));
 }
-bool Time::operator>(const Time& t) const{
-    return((hours > t.hours) || ((hours==t.hours)&&(minutes>t.minutes))
-        || ((hours==t.hours)&&(minutes==t.minutes)&&(seconds>t.seconds)));
+bool Time::operator>(const Time& time) const {
+    return((t.hours > time.t.hours) || ((t.hours == time.t.hours) && (t.minutes > time.t.minutes))
+        || ((t.hours == time.t.hours) && (t.minutes == time.t.minutes) && (t.seconds > time.t.seconds)));
 }
