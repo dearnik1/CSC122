@@ -18,7 +18,7 @@ public:
     Time(int, int, int);
 
     void setTime(int, int, int);
-    void getTime(Time t)const;
+    void getTime()const;
 
     //overloading operators
     Time operator+(const Time&) const;
