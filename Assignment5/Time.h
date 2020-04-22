@@ -1,8 +1,9 @@
-
 #ifndef Time_H
 #define Time_H
+#include <iostream>
+using namespace std;
 
-struct timestructure{
+struct timestructure {
     int hours;
     int minutes;
     int seconds;
@@ -10,25 +11,19 @@ struct timestructure{
 
 class Time {
 private:
-    int hours,minutes,seconds;
+    timestructure t;
 
 public:
     Time();
-    Time(int,int,int);
+    Time(int, int, int);
 
-    void setTime(int,int,int);
-    timestructure getTime()const;
-
-    //getter
-    int getHours() const;
-    int getMinutes() const;
-    int getSeconds() const;
+    void setTime(int, int, int);
+    void getTime(Time t)const;
 
     //overloading operators
     Time operator+(const Time&) const;
     bool operator==(const Time&) const;
     bool operator>(const Time&) const;
-};
-
+ };
 
 #endif
