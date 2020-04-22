@@ -12,9 +12,9 @@ void Time::setTime(int h, int m, int s) {
     t.minutes = m;
     t.seconds = s;
 }
-void Time::getTime(Time time)const {
-    cout << time.t.hours << ":" << time.t.minutes
-        << ":" << time.t.seconds << endl;
+void Time::getTime()const {
+    cout << t.hours << ":" << t.minutes
+        << ":" << t.seconds << endl;
 }
 
 //overloading operators
