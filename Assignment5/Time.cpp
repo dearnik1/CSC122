@@ -36,10 +36,6 @@ void Time::setTime(int h,int m,int s){
     minutes = (m + s/60) % 60;			// Take into account that 10h > 25h because 25h would turn into 1h
     seconds = s % 60;
 }
-timeStructure Time::getTime()const{
-    timeStructure t = {hours, minutes, seconds};
-    return t;
-}
 
 //overloading operators
 Time Time::operator+(const Time& t) const{

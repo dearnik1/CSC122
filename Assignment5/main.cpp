@@ -17,10 +17,9 @@ int main() {
 
     cout << "Enter time 2 (hours minutes seconds): ";
     cin >> h >> m >> s;
-    Time t2(h,m,s);
-	timeStructure time2 = t2.getTime();
-    cout << "The given time is " << time2.hours << ":" << time2.minutes
-        << ":" << time2.seconds << endl;
+    Time t2(h,m,s);		// testing accessors:
+    cout << "The given time is " << t2.getHours() << ":" << t2.getMinutes()
+        << ":" << t2.getSeconds() << endl;
 
     if (t1 == t2)
     	cout << "Time 1 is equal to time 2" << endl;

@@ -2,11 +2,7 @@
 #ifndef Time_H
 #define Time_H
 
-struct timeStructure{
-    int hours;
-    int minutes;
-    int seconds;
-};
+
 
 class Time {
 private:
@@ -18,7 +14,6 @@ public:
 
 	void printTime();
     void setTime(int,int,int);
-    timeStructure getTime()const;
 
     //getter
     int getHours() const;
