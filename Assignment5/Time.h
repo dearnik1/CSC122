@@ -19,7 +19,7 @@ public:
 
     void setTime(int, int, int);
     timeStructure getTime()const;
-    void printTime(timeStructure t);
+    void printTime();
 
     //overloading operators
     Time operator+(const Time&) const;
