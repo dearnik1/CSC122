@@ -9,14 +9,15 @@ int main() {
     cin >> h >> m >> s;
     Time t1(h, m, s);
     cout << "t1 is ";
-    t1.printTime(t1.getTime());
+    t1.printTime();
     
     //object 2
     cout << "Enter a time(h m s): ";
     cin >> h >> m >> s;
     Time t2(h, m, s);
-    cout << "t2 is ";
-    t2.printTime(t2.getTime());
+	timeStructure time2 = t2.getTime();		// Testing getTime(). The output might be not ideal (no zeroes at 06:01:09)
+	cout << "t2 is " << time2.hours << ":" << time2.minutes
+		<< ":" << time2.seconds << endl;
 
     if (t1 == t2)
         cout << "Time t1 is equal to t2" << endl;
@@ -27,6 +28,8 @@ int main() {
 
     Time t3 = t1 + t2;
     cout << "t3(t1+t2): ";
-    t3.printTime(t3.getTime());
+    t3.printTime();
+
+	system("pause");
     return 0;
 }

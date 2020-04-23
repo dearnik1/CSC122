@@ -23,20 +23,6 @@ Time Time::operator+(const Time& time) const {
     int temp_min = t.minutes + time.t.minutes;
     int temp_sec = t.seconds + time.t.seconds;
 
-    if (temp_sec >= 60) {
-        temp_sec -= 60;
-        temp_min++;
-    }
-
-    if (temp_min >= 60) {
-        temp_min -= 60;
-        temp_hours++;
-    }
-
-    if (temp_hours >= 24) {
-        temp_hours -= 24;
-    }
-
     return Time(temp_hours, temp_min, temp_sec);
 }
 bool Time::operator==(const Time& time) const {
@@ -48,7 +34,7 @@ bool Time::operator>(const Time& time) const {
     // converting into seconds is easier than building a whole logic comparing hours, minutes and seconds
 }
 
-void Time::printTime(timeStructure t) {	// output nice & neat HH:MM:SS format
+void Time::printTime() {	// output nice & neat HH:MM:SS format
     if (t.hours < 10)
         cout << 0;
     cout << t.hours << ":";
