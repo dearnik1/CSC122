@@ -3,15 +3,9 @@
 #include <iostream>
 using namespace std;
 
-struct timestructure {
-    int hours;
-    int minutes;
-    int seconds;
-};
-
 class Time {
 private:
-    timestructure t;
+    int hours, minutes, seconds;
 
 public:
     Time();
@@ -19,7 +13,7 @@ public:
 
     void setTime(int, int, int);
     void getTime()const;
-
+    
     //overloading operators
     Time operator+(const Time&) const;
     bool operator==(const Time&) const;
