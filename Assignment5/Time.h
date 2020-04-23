@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-struct timestructure {
+struct timeStructure {
     int hours;
     int minutes;
     int seconds;
@@ -11,14 +11,15 @@ struct timestructure {
 
 class Time {
 private:
-    timestructure t;
+    timeStructure t;
 
 public:
     Time();
     Time(int, int, int);
 
     void setTime(int, int, int);
-    void getTime()const;
+    timeStructure getTime()const;
+    void printTime(timeStructure t);
 
     //overloading operators
     Time operator+(const Time&) const;
