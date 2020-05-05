@@ -15,6 +15,7 @@ void employee::setNumber(int num)
 	while (num < 100000000 || num > 999999999)
 	{
 		cout << "Wrong number! Try again: ";
+		cin.clear();
 		cin >> num;
 	}
 	number = num;
