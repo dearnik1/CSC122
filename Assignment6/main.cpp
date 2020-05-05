@@ -10,10 +10,11 @@ int main()
 	worker* a = new worker;
 	manager* b = new manager;
 	unsigned int n, i;
+	bool online = true;
 
-	while (true) {
+	while (online) {
 		cout << endl << "Main menu:" << endl << "1 - Add worker" << endl << "2 - Add manager" << endl << "3 - Display worker" << endl << "4 - Display manager"
-		<< endl << "5 - Modify worker" << endl << "6 - Modify manager" << endl << endl << "Enter your choice: ";
+		<< endl << "5 - Modify worker" << endl << "6 - Modify manager" << endl << "7 - Exit program" << endl << endl << "Enter your choice: ";
 		
 		cin >> n;
 		switch (n) {
@@ -76,6 +77,7 @@ int main()
 					cout << endl << "wrong number! Try again: ";
 					cin >> n;
 				}
+				workers[n - 1].displayWorker();
 				workers[n - 1].modifyWorker();
 			}
 			break;
@@ -92,8 +94,12 @@ int main()
 					cout << endl << "wrong number! Try again: ";
 					cin >> n;
 				}
+				managers[n - 1].displayManager();
 				managers[n - 1].modifyManager();
 			}
+			break;
+		case 7:
+			online = false;
 			break;
 		default:
 			cout << "Wrong number! Try again: " << endl << endl;
