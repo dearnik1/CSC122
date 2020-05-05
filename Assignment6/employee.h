@@ -11,7 +11,6 @@ private:
     string name, education;
     char gender;
     
-    static int managerNum, workerNum;
 public:
     employee();
     //sets

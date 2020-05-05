@@ -13,6 +13,7 @@ void manager::setPromoDate(int m, int d, int y)
 	while (m > 12 || m < 1 || d>31 || d < 1 || y < 1 || y>9999)
 	{
 		cout << "Wrong Date! Try again: ";
+		cin.clear();
 		cin >> m >> d >> y;
 	}
 	dateOfPromo.clear();
@@ -33,6 +34,7 @@ void manager::setDeptName(string dept)
 	while (dept.length() != 4)
 	{
 		cout << "Wrong Code! Try again: ";
+		cin.clear();
 		cin >> dept;
 	}
 	string up = dept;
@@ -46,6 +48,7 @@ void manager::setJobTitle(string title)
 	while (title.length() > 20)
 	{
 		cout << "Name is too long! Try again: ";
+		cin.clear();
 		cin >> title;
 	}
 	jobTitle = title;
@@ -60,7 +63,7 @@ void manager::setYearlySalary(float sal)
 void manager::modifyManager()
 {
 	cout << endl << "What do you want to modify?" << endl << "1 - Employee Number" << endl << "2 - Name" << endl << "3 - Age" << endl << "4 - Gender Code"
-		<< endl << "5 - Education" << endl << "6 - Date of Promotion" << endl << "7 - Department Name" << endl << "8 - Job Title" << endl 
+		<< endl << "5 - Education" << endl << "6 - Date of Promotion" << endl << "7 - Department Name" << endl << "8 - Job Title" << endl
 		<< "9 - Yearly Salary" << endl << endl << "Enter your choice: ";
 	int n;
 	float b;

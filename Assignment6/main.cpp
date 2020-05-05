@@ -14,7 +14,7 @@ int main()
 	while (true) {
 		cout << endl << "Main menu:" << endl << "1 - Add worker" << endl << "2 - Add manager" << endl << "3 - Display worker" << endl << "4 - Display manager"
 		<< endl << "5 - Modify worker" << endl << "6 - Modify manager" << endl << endl << "Enter your choice: ";
-		
+
 		cin >> n;
 		switch (n) {
 		case 1:
@@ -76,6 +76,7 @@ int main()
 					cout << endl << "wrong number! Try again: ";
 					cin >> n;
 				}
+				workers[n - 1].displayWorker();
 				workers[n - 1].modifyWorker();
 			}
 			break;
@@ -92,6 +93,7 @@ int main()
 					cout << endl << "wrong number! Try again: ";
 					cin >> n;
 				}
+				managers[n - 1].displayManager();
 				managers[n - 1].modifyManager();
 			}
 			break;

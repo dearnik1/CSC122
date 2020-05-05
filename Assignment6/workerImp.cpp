@@ -12,6 +12,7 @@ void worker::setHiringDate(int m, int d, int y)
 	while(m>12||m<1||d>31||d<1||y<1||y>9999)
 	{
 		cout << "Wrong Date! Try again: ";
+		cin.clear();
 		cin >> m >> d >> y;
 	}
 	hiringDate.clear();
@@ -32,6 +33,7 @@ void worker::setDeptName(string dept)
 	while (dept.length() != 4)
 	{
 		cout << "Wrong Code! Try again: ";
+		cin.clear();
 		cin >> dept;
 	}
 	string up = dept;
@@ -53,7 +55,7 @@ void worker::modifyWorker()
 	int n;
 	float b;
 	string str;
-	
+
 	cin >> n;
 	switch (n) {
 	case 1:
