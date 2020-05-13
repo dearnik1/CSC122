@@ -77,6 +77,8 @@ int main() {
     hou2.setAnnualSalary();
     hou2.displayEmployee();
 
+	Hourly hou3(20, 30, "part time");		// testing another constructor
+
 	system("pause");
     return 0;
 }
