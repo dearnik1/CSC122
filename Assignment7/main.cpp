@@ -73,7 +73,7 @@ int main() {
 
     Benefit ben5("ppo", 80000, 2);
     Hourly hou2("Nick", "Stivenson", 'm', 6, ben5,
-        12, 70, "full time");
+        12, 50, "full time");
     hou2.setAnnualSalary();
     hou2.displayEmployee();
 

@@ -30,7 +30,7 @@ void Hourly::setWage(double _wage)
 }
 void Hourly::setHours(double _hours)
 {
-	if(MAX_HOURS>=_hours>=MIN_HOURS)
+	if((MAX_HOURS>=_hours) && (_hours>=MIN_HOURS))
 		hours = _hours;
 }
 void Hourly::setCategory(string cat)
