@@ -25,7 +25,7 @@ void Hourly::setAnnualSalary()
 }
 void Hourly::setWage(double _wage)
 {
-	if(MAX_WAGE>=_wage>=MIN_WAGE)
+	if((MAX_WAGE>=_wage) && (_wage>=MIN_WAGE))
 		wage = _wage;
 }
 void Hourly::setHours(double _hours)
