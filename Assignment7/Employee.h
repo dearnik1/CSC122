@@ -16,7 +16,6 @@ protected:
     Benefit benefit;
 private:
     static int numEmployees;
-    int sum;
 public:
     Employee();
     Employee(string fName, string lName, char gen, int dep, Benefit ben);
@@ -24,14 +23,14 @@ public:
     virtual void displayEmployee();
 
     //getter
-    int getSum() const { return sum; }
+    static int getNumEmployees() { return numEmployees; }
     string getFirstName() const {return firstName;}
     string getLastName() const {return lastName;}
     char getGender() const {return gender;}
     int getDependents() const {return dependents;}
     double getAnnualSalary() const {return annualSalary;}
     Benefit getBenefit() const {return benefit;}
-    
+
     //setter
     void setFirstName(string fName);
     void setLastName(string lName);

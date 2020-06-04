@@ -25,16 +25,7 @@ double Salaried::calculatePay()
 }
 void Salaried::displayEmployee()
 {
-	cout << "Employee Information:" << endl;
-	cout << "_______________________________________________________________" << endl;
-	cout << setw(22) << left << "Name:" << getFirstName() << " " << getLastName() << endl;
-	cout << setw(22) << left << "Gender:" << getGender() << endl;
-	cout << setw(22) << left << "Dependents:" << getDependents() << endl;
-	cout << setw(22) << left << "Annual Salary:" << fixed << setprecision(2) << getAnnualSalary() << endl;
-	cout << setw(22) << left << "Weekly Salary:" << calculatePay() << endl;
-	cout << "_______________________________________________________________" << endl;
-	benefit.displayBenefit();
-	cout << "Salaried Employee" << endl;
+	Employee::displayEmployee();
 	cout << setw(22) << left << "Management Level: " << getManLevel() << endl;
-	cout << "---------Number of Objects created: " << getSum() << "---------" << endl << endl;
+	cout << "---------Number of Objects created: " << getNumEmployees() << "---------" << endl << endl;
 }

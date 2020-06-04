@@ -1,10 +1,10 @@
 #include <iostream>
 #include "Employee.h"
 
+int Employee::numEmployees = 0;
 
 Employee::Employee(){
     numEmployees++;
-    sum = numEmployees;
 
     firstName = "not given";
     lastName = "not given";
@@ -15,7 +15,6 @@ Employee::Employee(){
 
 Employee::Employee(string fName, string lName, char gen, int dep, Benefit ben){
     numEmployees++;
-    sum = numEmployees;
 
     setFirstName(fName);
     setLastName(lName);
@@ -42,7 +41,7 @@ void Employee::setAnnualSalary(double aSalary){
 void Employee::setBenefit(Benefit ben){
     benefit = ben;
 }
-    
+
 double Employee::calculatePay(){
     return annualSalary/52;
 }
